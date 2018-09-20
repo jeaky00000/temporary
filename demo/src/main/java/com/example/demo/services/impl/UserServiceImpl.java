@@ -1,5 +1,6 @@
 package com.example.demo.services.impl;
 
+import com.example.demo.dao.UserDao;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.model.User;
 import com.example.demo.services.UserService;
@@ -14,10 +15,14 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private UserDao userDao;
+
 
     @Override
     public List<User> selectAllUser(int pageNo, int pageSize) {
         PageHelper.startPage(pageNo, pageSize);
-        return userMapper.selectAllUser();
+        //return userMapper.selectAllUser();
+        return userDao.findAllUser();
     }
 }
