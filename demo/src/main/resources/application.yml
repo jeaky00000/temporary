@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     name: test
-    url: jdbc:mysql://127.0.0.1:3306/data
+    url: jdbc:mysql://127.0.0.1:3306/data?useUnicode=true&characterEncoding=UTF-8
     username: admin
     password: admin
     # 使用druid数据源
@@ -27,6 +27,8 @@ spring:
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.example.model
+  configuration:
+    map-underscore-to-camel-case: true
 pagehelper:
   helper-dialect: mysql
   reasonable: true
