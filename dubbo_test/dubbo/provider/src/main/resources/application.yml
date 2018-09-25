@@ -1,0 +1,17 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: provider
+  dubbo:
+    application:
+      name: Provide
+    registry:
+      address: zookeeper://192.168.36.128:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: com.dabao.provider.service.impl
+  aop:
+    proxy-target-class: false

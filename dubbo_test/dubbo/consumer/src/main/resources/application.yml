@@ -1,0 +1,15 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: consumer
+  dubbo:
+    application:
+      name: consumer
+    registry:
+      address: zookeeper://192.168.36.128:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: com.dabao.consumer.controller
